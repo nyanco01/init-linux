@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/setup-sh/resource/import.sh
+source $HOME/init-linux/resource/import.sh
 
 CHECK sudo apt update
 CHECK sudo apt upgrade -y

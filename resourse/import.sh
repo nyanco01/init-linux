@@ -1,5 +1,5 @@
 #!/bin/bash
-readonly SETUP_DIR="$HOME/setup-sh/"
+readonly SETUP_DIR="$HOME/init-linux/"
 
 red=31
 yellow=33
