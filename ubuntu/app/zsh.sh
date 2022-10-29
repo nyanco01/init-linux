@@ -16,4 +16,6 @@ if [ -f $HOME/.zshrc ];then
 fi
 
 CHECK ln -sf $SETUP_DIR/resource/dotfiles/ubuntu.zshrc $HOME/.zshrc
+
+CHECK rm -rf $HOME/.config/sheldon
 CHECK ln -sf $SETUP_DIR/resource/config/sheldon $HOME/.config/sheldon

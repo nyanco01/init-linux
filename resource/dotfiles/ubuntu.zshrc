@@ -3,4 +3,7 @@ prompt() {
 }
 precmd_functions+=(prompt)
 
+autoload -U compinit
+compinit
+
 eval "$(sheldon source)"
