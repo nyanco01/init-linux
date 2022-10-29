@@ -11,3 +11,9 @@ CHECK sudo apt install -y pkg-config libssl-dev
 CHECK cargo install sheldon
 CHECK sheldon init --shell zsh
 
+if [ -f $HOME/.zshrc ];then
+    CHECK rm $HOME/.zshrc
+fi
+
+CHECK ln -sf $SETUP_DIR/resource/dotfiles/ubuntu.zshrc $HOME/.zshrc
+CHECK ln -sf $SETUP_DIR/resource/config/sheldon $HOME/.config/sheldon
