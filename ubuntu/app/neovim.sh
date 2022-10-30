@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/setup-sh/resource/import.sh
+source $HOME/init-linux/resource/import.sh
 
 CHECK sudo apt install -y neovim nodejs npm
 CHECK sudo npm install -g yarn
