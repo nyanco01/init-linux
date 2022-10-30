@@ -10,6 +10,3 @@ CHECK ln -sf $SETUP_DIR/resource/config/nvim $HOME/.config/nvim
 CHECK curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-CHECK curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-CHECK source ~/.bashrc
-CHECK nvm install v18.12.0
