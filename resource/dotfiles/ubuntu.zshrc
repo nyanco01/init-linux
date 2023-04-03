@@ -13,6 +13,9 @@ if [ $? -eq 0 ]; then
     ACTIVE_IF=$(ip route get 1.1.1.1 | xargs -n1 echo | sed -n 5p)
 fi
 
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
