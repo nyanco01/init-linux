@@ -7,6 +7,11 @@ CHECK sudo apt install -y qemu-kvm qemu-system libvirt-daemon-system libvirt-dae
 # CHECK echo "user = \"$USER\"" | sudo tee -a /etc/libvirt/qemu.conf
 CHECK sudo gpasswd -a $USER libvirt
 
+CHECK echo $(colored 33 "added the libvirt group, logout and login again\n")
+
+# virsh uri 
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
 # requirement for qemu-bridge-helper
 # CHECK sudo mkdir /etc/qemu
 # CHECK echo '\n' > sudo tee /etc/qemu/bridge.conf
