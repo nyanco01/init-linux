@@ -22,5 +22,8 @@ if [ $SHELL = '/bin/zsh' ];then
 	fi
 fi
 
+# remove tar file
+CHECK rm $HOME/nvim-linux64.tar.gz
+
 # install NvChad
 CHECK git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
