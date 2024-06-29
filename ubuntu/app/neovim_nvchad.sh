@@ -6,21 +6,8 @@ CHECK curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-lin
 CHECK sudo rm -rf /opt/nvim
 CHECK sudo tar -C /opt -xzf $HOME/nvim-linux64.tar.gz
 
-# checking exist export row in bashrc
-if [ $SHELL = '/bin/bash' ];then
-	RCfile=$(cat $HOME/.bashrc)
-	if [[ "$RCfile" != *opt/nvim-linux64* ]];then
-		echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.bashrc
-	fi
-fi
-
-# checking exist export row in zshrc
-if [ $SHELL = '/bin/zsh' ];then
-	RCfile=$(cat $HOME/.zshrc)
-	if [[ "$RCfile" != *opt/nvim-linux64* ]];then
-		echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.zshrc
-	fi
-fi
+# add symbolic link
+CHECK sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/bin/nvim
 
 # remove tar file
 CHECK rm $HOME/nvim-linux64.tar.gz
