@@ -9,8 +9,24 @@ CHECK sudo gpasswd -a $USER libvirt
 
 CHECK echo $(colored 33 "added the libvirt group, logout and login again\n")
 
-# virsh uri 
-export LIBVIRT_DEFAULT_URI=qemu:///system
+# set virsh uri for bash
+if [ $SHELL = '/bin/bash' ];then
+	RCfile=$(cat $HOME/.bashrc)
+	if [[ "$RCfile" != *LIBVIRT_DEFAULT_URI* ]];then
+		echo 'export LIBVIRT_DEFAULT_URI=qemu:///system"' >> ~/.bashrc
+	fi
+fi
+
+# set virsh uri for zsh
+if [ $SHELL = '/bin/zsh' ];then
+	RCfile=$(cat $HOME/.zshrc)
+	if [[ "$RCfile" != *LIBVIRT_DEFAULT_URI* ]];then
+		echo 'export LIBVIRT_DEFAULT_URI=qemu:///system"' >> ~/.zshrc
+	fi
+fi
+
+
+
 
 # requirement for qemu-bridge-helper
 # CHECK sudo mkdir /etc/qemu
