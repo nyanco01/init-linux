@@ -13,7 +13,7 @@ CHECK echo $(colored 33 "added the libvirt group, logout and login again\n")
 if [ $SHELL = '/bin/bash' ];then
 	RCfile=$(cat $HOME/.bashrc)
 	if [[ "$RCfile" != *LIBVIRT_DEFAULT_URI* ]];then
-		echo 'export LIBVIRT_DEFAULT_URI=qemu:///system"' >> ~/.bashrc
+		echo 'export LIBVIRT_DEFAULT_URI="qemu:///system"' >> ~/.bashrc
 	fi
 fi
 
@@ -21,7 +21,7 @@ fi
 if [ $SHELL = '/bin/zsh' ];then
 	RCfile=$(cat $HOME/.zshrc)
 	if [[ "$RCfile" != *LIBVIRT_DEFAULT_URI* ]];then
-		echo 'export LIBVIRT_DEFAULT_URI=qemu:///system"' >> ~/.zshrc
+		echo 'export LIBVIRT_DEFAULT_URI="qemu:///system"' >> ~/.zshrc
 	fi
 fi
 
