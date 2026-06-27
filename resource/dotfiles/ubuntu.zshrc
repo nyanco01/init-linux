@@ -1,5 +1,6 @@
 prompt() {
-    PS1="$(powerline-rs --shell zsh $?)"
+    PS1="$(powerline-rs --shell zsh --modules host,ssh,cwd,perms,git,gitstage,nix-shell,root $?)"
+    #PS1="$(powerline-rs --shell zsh $?)"
 }
 precmd_functions+=(prompt)
 
